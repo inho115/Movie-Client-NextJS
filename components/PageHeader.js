@@ -5,7 +5,7 @@ export default function PageHeader(props) {
   return (
     <Card className="bg-light text-dark">
       <Card.Body>
-        <p>{props.text}</p>
+        <strong>{props.text}</strong>
       </Card.Body>
     </Card>
   );

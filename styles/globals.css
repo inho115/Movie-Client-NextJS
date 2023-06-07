@@ -11,3 +11,8 @@ body {
 div p {
   margin-bottom: 0;
 }
+
+.year,
+.directors {
+  margin-left: 0.5rem;
+}

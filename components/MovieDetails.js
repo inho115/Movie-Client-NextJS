@@ -1,5 +1,35 @@
-import { Container } from "react-bootstrap";
+import PageHeader from "@/components/PageHeader";
 
-export default function MovieDetails() {
-  return <p>MovieDetails</p>;
+import { Container, Row, Col } from "react-bootstrap";
+
+export default function MovieDetails({ movie }) {
+  return (
+    <Container>
+      <Row>
+        {movie.poster ? (
+          <Col md>
+            <img src={movie.poster} alt="poster" className="w-100" />
+            <br />
+            <br />
+          </Col>
+        ) : (
+          ""
+        )}
+        <Col md>
+          <strong>Directed By:</strong> {movie.directors.join(", ")}
+          <br />
+          <br />
+          <p>{movie.fullplot}</p>
+          <br />
+          <strong>Cast:</strong> {movie.cast ? movie.cast.join(", ") : "N/A"}
+          <br />
+          <br />
+          <strong>Awards:</strong> {movie.awards.text}
+          <br />
+          <strong>IMDB Rating:</strong> {movie.imdb.rating} ({movie.imdb.votes}{" "}
+          votes)
+        </Col>
+      </Row>
+    </Container>
+  );
 }
